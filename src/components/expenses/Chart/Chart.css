@@ -1,0 +1,10 @@
+.expenses-chart{
+ background-color: azure;
+ border-radius: 10px;
+ padding: 10px;
+ border: none;
+ height: 8rem;
+ display: flex;
+ justify-content: space-around;
+ text-align: center;
+}
