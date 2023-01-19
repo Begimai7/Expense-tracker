@@ -1,6 +1,6 @@
 import React from 'react'
 import { ChartBar } from './ChartBar/ChartBar'
-import "./Chart.css"
+import styled from 'styled-components';
 
 
 
@@ -64,7 +64,7 @@ export const Chart = ({items}) => {
   return (
   
 
-    <div className='expenses-chart'>
+    <ExpensesChart>
 
      {months.map((item) => {
       return (
@@ -76,6 +76,17 @@ export const Chart = ({items}) => {
       );
      })}
 
-    </div>
+    </ExpensesChart>
   )
 }
+
+const ExpensesChart = styled.div`
+ background-color: azure;
+ border-radius: 10px;
+ padding: 10px;
+ border: none;
+ height: 8rem;
+ display: flex;
+ justify-content: space-around;
+ text-align: center;
+`

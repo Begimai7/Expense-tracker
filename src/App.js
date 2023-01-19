@@ -1,7 +1,7 @@
 import { useState } from "react";
-import './App.css';
 import { Expenses } from "./components/expenses/Expenses";
 import { NewExpenses } from "./components/newExpenses/NewExpenses";
+import styled from "styled-components";
 
 const DUMMY__EXPENSES = [
   {
@@ -18,7 +18,7 @@ const DUMMY__EXPENSES = [
   },
   {
     title: 'Jaket',
-    price: 1000,
+    price: 560,
     date: new Date(2022, 4, 5),
     id: 3
   },
@@ -35,7 +35,7 @@ const DUMMY__EXPENSES = [
     id: 5
   },
   {
-    title: 'Ice Cream',
+    title: 'Biscuit',
     price: 1900,
     date: new Date(2020, 7, 14),
     id: 6
@@ -52,10 +52,17 @@ const [expenses, setExpenses] = useState(DUMMY__EXPENSES)
   }
   console.log(expenses);
   return(
-    <div>
+    <Container>
    <NewExpenses addNewExpenses={addNewExpenses}/>
    <Expenses expenses={expenses}/>
-    </div>
+    </Container>
   )
 }
 export default App;
+
+const Container = styled.div`
+text-align: center;
+  background-color: rgb(61, 60, 60);
+  padding: 30px;
+
+`

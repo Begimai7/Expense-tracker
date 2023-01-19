@@ -1,12 +1,12 @@
-import "./Expenses.css"
+
 import React, { useState } from 'react'
 import { ExpensesList } from "./expensesList/ExpensesList"
-import "./Expenses.css"
 import { ExpenseFilter } from "./expenseFilter/ExpenseFilter"
 import { Chart } from "./Chart/Chart"
+import styled from 'styled-components'
 
 export const Expenses = ({expenses}) => {
-const [selectedYear, setSelsctYear] = useState('2021')
+const [selectedYear, setSelsctYear] = useState('2022')
 
  const getSelectedYear = (e) => {
   setSelsctYear(e.target.value)
@@ -18,12 +18,21 @@ const filteredYear = expenses.filter((elem) => {
 })
 
   return (
-    <div className="expenses-container">
+    <ExpensesContainer>
 
     <ExpenseFilter value={selectedYear} onChange={getSelectedYear}/>
     <Chart items={filteredYear}/>
     <ExpensesList expenses={filteredYear}/>
-    </div>
+    
+    </ExpensesContainer>
   )
 }
 
+const ExpensesContainer = styled.div`
+  width: 900px;
+ margin: 1rem auto;
+ background-color: rgb(22, 21, 21);
+ border-radius: 10px;
+ color: #fff;
+ padding: 20px 10px;
+`

@@ -1,10 +1,11 @@
 import React from 'react'
 import { ExpenseItem } from '../expenseItem/ExpenseItem'
-import "./ExpensesList.css"
+
+import styled from 'styled-components'
 
 export const ExpensesList = ({ expenses }) => {
   return (
-    <ul className='expenses-list'>
+    <ExpenseList >
      {
       expenses.map((elem) => (
        <ExpenseItem 
@@ -12,6 +13,9 @@ export const ExpensesList = ({ expenses }) => {
        data={elem}/>
       ))
      }
-    </ul>
+    </ExpenseList>
   )
 }
+const ExpenseList = styled.ul`
+   list-style: none;
+`

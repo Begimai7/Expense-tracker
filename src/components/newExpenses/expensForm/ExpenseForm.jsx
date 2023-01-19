@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "../../UI/button/Button";
 import { InputForm } from "../../UI/inputForm/InputForm";
-import "./ExpenseForm.css";
+import styled from "styled-components";
 
 export const ExpenseForm = ({addNewExpenses, openFormHandler}) => {
   const [inputTitle, setInputTitle] = useState('')
@@ -29,7 +29,7 @@ export const ExpenseForm = ({addNewExpenses, openFormHandler}) => {
 
   return (
     <div>
-      <form className="input-form">
+      <Form>
         <InputForm 
         id="title" 
         inputType="text" 
@@ -52,11 +52,22 @@ export const ExpenseForm = ({addNewExpenses, openFormHandler}) => {
         labelText="Дата"
         onChange={dateInputChange}
         />
-      </form>
-      <div className="buttons">
+      </Form>
+      <Buttons>
         <Button onClick={openFormHandler}>Отмена</Button>
         <Button onClick={submitNewExpenses}>Сохранить</Button>
-      </div>
+      </Buttons>
     </div>
   );
 };
+
+const Form = styled.form`
+  display: flex;
+ justify-content: space-between;
+ flex-wrap: wrap;
+ margin: 20px;
+`
+const Buttons = styled.div`
+ display: flex;
+ justify-content: flex-end;
+`
